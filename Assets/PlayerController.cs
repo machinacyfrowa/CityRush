@@ -26,9 +26,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddForce(acceleration * inputVector.y * transform.forward);
-        //rb.AddTorque(maneuverability * rb.velocity.magnitude * inputVector.x * transform.up);
-        rb.AddTorque(maneuverability * inputVector.x * transform.up);
+        rb.AddForce(acceleration * inputVector.y * transform.forward, ForceMode.Acceleration);
+        rb.AddTorque(maneuverability * rb.velocity.magnitude * inputVector.x * transform.up);
+        //rb.AddTorque(maneuverability * inputVector.x * transform.up);
     }
 
     void OnMove(InputValue value)
